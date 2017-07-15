@@ -1,0 +1,87 @@
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0 40px;
+  left: 0;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, transparent, #000);
+  z-index: 10;
+}
+
+.footer__controls {
+  display: flex;
+  align-items: center;
+}
+
+.footer__controls__now-playing {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 30px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.footer__controls__now-playing:before {
+  width: 14px;
+  height: 14px;
+  background: url('../img/ui/icon_sc.svg') no-repeat center center / cover;
+  display: block;
+  position: absolute;
+  left: -5px;
+  top: -2px;
+  content: '';
+}
+
+.btn {
+  border: 0;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn--control {
+  background-color: rgba(0, 0, 0, .6);
+  border-radius: 50%;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+.btn--control:hover {
+  transform: scale(1.05);
+}
+
+
+#control-audio {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#control-audio[data-playing="true"] {
+  background-image: url('../img/ui/icon_pause.svg');
+}
+
+#control-audio[data-playing="false"] {
+  background-image: url('../img/ui/icon_play.svg');
+}
+
+#control-toggle-about {
+  background-image: url('../img/ui/icon_about.svg');
+}

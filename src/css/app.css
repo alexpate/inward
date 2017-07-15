@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('../fonts/Graphik-Regular-Web.eot');
+  src: url('../fonts/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Graphik-Regular-Web.woff2') format('woff2'),
+      url('../fonts/Graphik-Regular-Web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url('../fonts/Graphik-Medium-Web.eot');
+  src: url('../fonts/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Graphik-Medium-Web.woff2') format('woff2'),
+      url('../fonts/Graphik-Medium-Web.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 900px;
+  background-color: #000;
+  font-family: 'Graphik Web', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.floor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}

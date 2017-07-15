@@ -1,0 +1,91 @@
+.about {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.about.is-visible {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+}
+
+.about__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+  z-index: 3;
+}
+
+.about.is-visible .about__title,
+.about.is-visible .about__copy,
+.about.is-visible .about__btn {
+  animation-fill-mode: forwards;
+  animation-name: fadeInUp;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-duration: 600ms;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.about__title,
+.about__copy {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.about__title {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  animation-delay: 200ms;
+}
+
+.about__copy {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4em;
+  margin-bottom: 20px;
+  text-align: center;
+  animation-delay: 300ms;
+}
+
+.about__btn {
+  border-radius: 30px;
+  padding: 10px 60px;
+  color: #000;
+  background-color: #fff;
+  animation-delay: 450ms;
+}
+
+#about-waveform {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
