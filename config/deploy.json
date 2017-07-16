@@ -7,5 +7,5 @@
    "enableCloudfront": true,
    "retries": 20,
    "domain": "inward.audio",
-   "configFile": ".s3-website.json"
+   "configFile": "config/deploy.json"
 }

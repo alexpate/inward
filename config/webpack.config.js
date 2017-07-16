@@ -3,9 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['babel-polyfill', './src/js/app'],
+  entry: ['babel-polyfill', '../src/js/app'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'inward-[hash].js',
   },
   module: {
@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: '../src/index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -50,8 +50,8 @@ module.exports = {
   resolve: {
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, 'src/js'),
+      path.resolve(__dirname, '../src'),
+      path.resolve(__dirname, '../src/js'),
     ],
     extensions: ['.js', '.json', '.jsx', '.css'],
   },
