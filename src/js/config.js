@@ -14,18 +14,50 @@ export const CLIENT_ID = '17a992358db64d99e492326797fff3e8';
 
 // All of the gifs (names are tied to CSS id's)
 export const ALL_GIFS = [
-  'x-ray',
-  'growth',
-  'morph',
-  'rainbow-drip',
-  'x-ray-2',
-  'x-ray-3',
-  'x-ray',
-  'train',
-  'orb',
-  'crowd',
-  'heads',
-  'fly',
+  {
+    name: 'crowd',
+    path: require('img/gifs/crowd.gif'),
+  },
+  {
+    name: 'fly',
+    path: require('img/gifs/fly.gif'),
+  },
+  {
+    name: 'growth',
+    path: require('img/gifs/growth.gif'),
+  },
+  {
+    name: 'heads',
+    path: require('img/gifs/heads.gif'),
+  },
+  {
+    name: 'morph',
+    path: require('img/gifs/morph.gif'),
+  },
+  {
+    name: 'orb',
+    path: require('img/gifs/orb.gif'),
+  },
+  {
+    name: 'rainbow-drip',
+    path: require('img/gifs/rainbow_drip.gif'),
+  },
+  {
+    name: 'train',
+    path: require('img/gifs/train.gif'),
+  },
+  {
+    name: 'x_ray_2',
+    path: require('img/gifs/x_ray_2.gif'),
+  },
+  {
+    name: 'x_ray_3',
+    path: require('img/gifs/x_ray_3.gif'),
+  },
+  {
+    name: 'x_ray',
+    path: require('img/gifs/x_ray.gif'),
+  },
 ];
 
 export const LINE_COLORS = [

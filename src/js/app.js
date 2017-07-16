@@ -1,7 +1,6 @@
 import 'css/app.css';
 import 'css/about.css';
 import 'css/controls.css';
-import 'css/gifs.css';
 
 import {TRACK, CLIENT_ID, PAGE_DIMENSIONS, LINE_COLORS, ALL_GIFS} from 'config';
 
@@ -34,11 +33,57 @@ const SelectRandomGifs = () => {
   // Always empty the array
   GIFS = [];
   // Push two random gifs to the stage
-  GIFS.push(ALL_GIFS[Math.floor(Math.random() * gifsLength)]);
-  GIFS.push(ALL_GIFS[Math.floor(Math.random() * gifsLength)]);
+  GIFS.push(ALL_GIFS[Math.floor(Math.random() * gifsLength)].name);
+  GIFS.push(ALL_GIFS[Math.floor(Math.random() * gifsLength)].name);
 
   // Recycle every 10 seconds
   setTimeout(SelectRandomGifs, 10000);
+};
+
+//
+// Preloads a single image
+// =======================
+//
+const PreloadImage = gif => {
+  new Promise(resolve => {
+    const _img = new Image();
+    _img.onload = () => resolve({gif, status: 'ok'});
+    _img.onerror = () => resolve({gif, status: 'error'});
+    console.log('Preloading =>', gif.path);
+
+    _img.src = gif.path;
+  });
+};
+
+//
+// Generates the CSS ID's
+// =======================
+//
+const GenerateImageCSS = gifs => {
+  const head = document.head || document.getElementsByTagName('head')[0];
+  const style = document.createElement('style');
+  style.type = 'text/css';
+  let css = '';
+
+  const generateCss = gif => {
+    return `#gif-${gif.name} {
+      background-image: url('${gif.path}')}
+    `;
+  };
+
+  for (let i = 0; i < gifs.length; i += 1) {
+    css += generateCss(gifs[i]);
+  }
+
+  console.log(css);
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+
+  head.appendChild(style);
 };
 
 //
@@ -160,9 +205,12 @@ const init = () => {
   canvas.width = PAGE_DIMENSIONS.width;
   canvas.height = PAGE_DIMENSIONS.height;
 
-  SelectRandomGifs();
+  Promise.all(ALL_GIFS.map(PreloadImage)).then(() => {
+    SelectRandomGifs();
+    StartVisuals();
+  });
+  GenerateImageCSS(ALL_GIFS);
   ConfigAudio();
-  StartVisuals();
   DrawAudioWave();
 };
 
