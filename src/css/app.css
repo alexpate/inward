@@ -52,7 +52,6 @@ p {
 
 .floor,
 .mobile-warning {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -60,6 +59,7 @@ p {
 }
 
 .floor {
+  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -70,6 +70,7 @@ p {
   z-index: 11;
   padding: 40px 30px;
   display: none;
+  position: fixed;
 }
 
 .mobile-warning.is-visible {
