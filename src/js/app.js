@@ -124,7 +124,8 @@ const CheckIfMobile = () => {
 //
 const ConfigAudio = () => {
   audio = new Audio();
-  audio.src = `https://api.soundcloud.com/tracks/${TRACK}/stream?client_id=${CLIENT_ID}`;
+  // audio.src = `https://api.soundcloud.com/tracks/${TRACK}/stream?client_id=${CLIENT_ID}`;
+  audio.src = "http://play.fnoobtechno.com:2199/;";
   audio.controls = false;
   audio.autoplay = true;
   audio.crossOrigin = 'anonymous';
