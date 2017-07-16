@@ -1,0 +1,11 @@
+{
+   "index": "index.html",
+   "region": "us-east-1",
+   "uploadDir": "./dist",
+   "prefix": "",
+   "corsConfiguration": [],
+   "enableCloudfront": true,
+   "retries": 20,
+   "domain": "inward.audio",
+   "configFile": ".s3-website.json"
+}
