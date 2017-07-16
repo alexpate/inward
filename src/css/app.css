@@ -33,6 +33,7 @@ body {
   background-color: #000;
   font-family: 'Graphik Web', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .floor {
