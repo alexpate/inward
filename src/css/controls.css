@@ -16,12 +16,15 @@
   align-items: center;
 }
 
-.footer__controls__now-playing {
+.footer__controls__link {
   color: #fff;
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.footer__controls__now-playing {
   margin-left: 30px;
   position: relative;
   padding-left: 20px;
@@ -36,6 +39,10 @@
   left: -5px;
   top: -2px;
   content: '';
+}
+
+.footer__controls__credit {
+  margin-right: 30px;
 }
 
 .btn {

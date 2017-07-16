@@ -65,6 +65,10 @@
   animation-delay: 300ms;
 }
 
+.about__copy a {
+  color: inherit;
+}
+
 .about__btn {
   border-radius: 30px;
   padding: 10px 60px;

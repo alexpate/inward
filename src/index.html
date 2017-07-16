@@ -18,17 +18,20 @@
       <div class="footer">
         <div class="footer__controls">
           <button class="btn btn--control" id="control-audio" data-playing="true"></button>
-          <a href="https://soundcloud.com/oood/progressive-psy-trance-mix-by" class="footer__controls__now-playing">Progressive Psytrance Mix By Steve Oood</a>
+          <a href="https://soundcloud.com/oood/progressive-psy-trance-mix-by" target="_blank" class="footer__controls__link footer__controls__now-playing">Progressive Psytrance Mix By Steve Oood</a>
         </div>
-        <button class="btn btn--control control-toggle-about" id="control-toggle-about"></button>
+        <div class="footer__controls">
+          <a href="https://twitter.com/alexjpate" target="_blank" class="footer__controls__link footer__controls__credit">Project by @alexjpate</a>
+          <button class="btn btn--control control-toggle-about" id="control-toggle-about"></button>
+        </div>
       </div>
 
 
       <section class="about is-visible">
         <canvas id="about-waveform" width="100%" height="800"></canvas>
         <div class="about__container">
-          <h1 class="about__title">&gt;inward&lt;</h1>
-          <p class="about__copy">A real-time visualisation of random SoundCloud techno and deep house mixes. From ideation to launch in 24 hours, this project probably won't add much value to your life.
+          <h1 class="about__title">inward</h1>
+          <p class="about__copy">A real-time visualisation of random SoundCloud techno and deep house mixes. Inspired by Trif, this hacky weekend project went from ideation to launch in 24 hours. <a href="https://github.com/alexpate/inward" target="_blank">View source.</a>
           <br/><br/>⚠️ This site contains rapidly flickering images</p>
           <button class="btn about__btn control-toggle-about control-loading">Loading</button>
         </div>
