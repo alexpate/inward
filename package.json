@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/webpack -p --config config/webpack.prod.config.js",
-    "deploy": "rm -rf dist && npm run build && ./node_modules/.bin/s3-website deploy -f config/deploy.json"
+    "build": "./node_modules/.bin/webpack -p --config webpack.prod.config.js",
+    "deploy": "rm -rf dist && npm run build && ./node_modules/.bin/s3-website deploy -f deploy.json"
   },
   "author": "Alex Pate",
   "license": "ISC",
@@ -37,6 +37,5 @@
     "compression-webpack-plugin": "^1.0.0",
     "html-minifier": "^3.5.2",
     "postcss-loader": "^2.0.6"
-  },
-  "browserslist": ["> 4%", "ie 11", "safari 9"]
+  }
 }

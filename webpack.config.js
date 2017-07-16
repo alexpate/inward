@@ -1,12 +1,13 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  entry: ['babel-polyfill', '../src/js/app'],
+  entry: ['babel-polyfill', './src/js/app'],
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'inward-[hash].js',
   },
   module: {
@@ -21,16 +22,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
-            loader: 'postcss-loader',
-            options: {
-              plugins: function () {
-                return [autoprefixer]
-              }
-            }
-          }]
+          use: ['css-loader', 'postcss-loader'],
         }),
       },
       {
@@ -44,22 +39,28 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: '../src/index.html',
+      template: './src/index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true
-      }
+        removeStyleLinkTypeAttributes: true,
+      },
+    }),
+    new webpack.LoaderOptionsPlugin({
+      test: /\.css$/,
+      options: {
+        postcss: [autoprefixer({browsers: ['IE 11', '> 5%']})],
+      },
     }),
     new ExtractTextPlugin('inward-[hash].css'),
   ],
   resolve: {
     modules: [
       'node_modules',
-      path.resolve(__dirname, '../src'),
-      path.resolve(__dirname, '../src/js'),
+      path.resolve(__dirname, './src'),
+      path.resolve(__dirname, './src/js'),
     ],
     extensions: ['.js', '.json', '.jsx', '.css'],
   },
