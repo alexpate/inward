@@ -39,8 +39,16 @@ export const ALL_GIFS = [
     path: require('img/gifs/orb.gif'),
   },
   {
+    name: 'psycho',
+    path: require('img/gifs/psycho.gif'),
+  },
+  {
     name: 'rainbow-drip',
     path: require('img/gifs/rainbow_drip.gif'),
+  },
+  {
+    name: 'space',
+    path: require('img/gifs/space.gif'),
   },
   {
     name: 'train',
