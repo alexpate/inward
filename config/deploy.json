@@ -3,6 +3,7 @@
    "region": "us-east-1",
    "uploadDir": "./dist",
    "prefix": "",
+   "cacheControl": "public, no-transform, max-age=2628000, s-maxage=2628000",
    "corsConfiguration": [],
    "enableCloudfront": true,
    "retries": 20,
