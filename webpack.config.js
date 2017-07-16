@@ -6,7 +6,7 @@ module.exports = {
   entry: ['babel-polyfill', './src/js/app'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'inward.js',
+    filename: 'inward-[hash].js',
   },
   module: {
     rules: [
@@ -37,8 +37,15 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true
+      }
     }),
-    new ExtractTextPlugin('inward.css'),
+    new ExtractTextPlugin('inward-[hash].css'),
   ],
   resolve: {
     modules: [
