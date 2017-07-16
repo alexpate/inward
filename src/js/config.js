@@ -28,13 +28,20 @@ export const ALL_GIFS = [
   'fly',
 ];
 
-export const LINE_COLORS = ['rgba(255, 23, 204, 0.3)', 'rgba(130, 23, 255, 0.3)'];
+export const LINE_COLORS = [
+  'rgba(255, 23, 204, 0.5)',
+  'rgba(130, 23, 255, 0.5)',
+];
 
 // The dimensions of the current viewport
 // - Used to set canvas width & height
 export const PAGE_DIMENSIONS = {
-  width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-  height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+  width: window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth,
+  height: window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight,
 };
 
 // The global app. This used primarily as a bus to bind custom events to.
