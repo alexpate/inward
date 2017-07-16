@@ -10,7 +10,7 @@ export const DEBUG = false;
 export const TRACK = '132296685';
 
 // SoundCloud client id
-export const CLIENT_ID = '17a992358db64d99e492326797fff3e8';
+export const CLIENT_ID = '';
 
 // All of the gifs (names are tied to CSS id's)
 export const ALL_GIFS = [
