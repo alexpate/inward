@@ -87,6 +87,16 @@ const GenerateImageCSS = gifs => {
 };
 
 //
+// REMOVES LOADING STATE FROM UI
+// ==============================
+//
+
+const RemoveLoadingState = () => {
+  const loadingButton = document.getElementsByClassName('control-loading')[0];
+  loadingButton.innerHTML = 'Enter';
+  loadingButton.classList.remove('control-loading');
+};
+//
 // SOME GENERIC WRAPPER FUNCTIONS
 // ==============================
 //
@@ -206,6 +216,7 @@ const init = () => {
   canvas.height = PAGE_DIMENSIONS.height;
 
   Promise.all(ALL_GIFS.map(PreloadImage)).then(() => {
+    RemoveLoadingState();
     SelectRandomGifs();
     StartVisuals();
   });
