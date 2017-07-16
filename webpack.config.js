@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -46,12 +45,6 @@ module.exports = {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-      },
-    }),
-    new webpack.LoaderOptionsPlugin({
-      test: /\.css$/,
-      options: {
-        postcss: [autoprefixer({browsers: ['IE 11', '> 5%']})],
       },
     }),
     new ExtractTextPlugin('inward-[hash].css'),

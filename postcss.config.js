@@ -2,6 +2,6 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   plugins: [
-    autoprefixer
+    autoprefixer({browsers: ['IE 11', '> 5%']})
   ]
 }
