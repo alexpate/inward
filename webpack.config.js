@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: ['babel-polyfill', './src/js/app'],
   output: {
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'inward.js',
   },
   module: {
@@ -41,7 +41,11 @@ module.exports = {
     new ExtractTextPlugin('inward.css'),
   ],
   resolve: {
-    modules: ['node_modules', path.resolve(__dirname, 'src'), path.resolve(__dirname, 'src/js')],
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'src/js'),
+    ],
     extensions: ['.js', '.json', '.jsx', '.css'],
   },
   context: __dirname,
