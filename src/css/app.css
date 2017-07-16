@@ -20,7 +20,6 @@
   font-stretch: normal;
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -31,18 +30,48 @@ body {
   width: 100%;
   height: 900px;
   background-color: #000;
+  color: #fff;
   font-family: 'Graphik Web', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.floor {
+h1 {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4em;
+  margin: 0 0 20px 0;
+}
+
+.floor,
+.mobile-warning {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.floor {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.mobile-warning {
+  background-color: #000;
+  z-index: 11;
+  padding: 40px 30px;
+  display: none;
+}
+
+.mobile-warning.is-visible {
+  display: block;
 }
