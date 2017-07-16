@@ -3,7 +3,7 @@ import 'css/about.css';
 import 'css/controls.css';
 import 'css/gifs.css';
 
-import { TRACK, CLIENT_ID, PAGE_DIMENSIONS, LINE_COLORS, ALL_GIFS } from 'config';
+import {TRACK, CLIENT_ID, PAGE_DIMENSIONS, LINE_COLORS, ALL_GIFS} from 'config';
 
 let GIFS = [];
 let audio;
@@ -22,7 +22,7 @@ const gifsLength = ALL_GIFS.length;
 // UPDATE THE DOM GIF ID
 // =====================
 //
-const switchGif = (gif) => {
+const switchGif = gif => {
   gifContainer.id = `gif-${gif}`;
 };
 
@@ -59,7 +59,7 @@ const audioPause = () => {
 //
 const ConfigAudio = () => {
   audio = new Audio();
-  audio.src = `http://api.soundcloud.com/tracks/${TRACK}/stream?client_id=${CLIENT_ID}`;
+  audio.src = `https://api.soundcloud.com/tracks/${TRACK}/stream?client_id=${CLIENT_ID}`;
   audio.controls = false;
   audio.autoplay = true;
   audio.crossOrigin = 'anonymous';
@@ -179,7 +179,9 @@ const toggleAbout = () => {
   return aboutContainer.classList.toggle('is-visible');
 };
 
-const controlToggleAbout = document.getElementsByClassName('control-toggle-about');
+const controlToggleAbout = document.getElementsByClassName(
+  'control-toggle-about',
+);
 const controlAudio = document.getElementById('control-audio');
 
 for (let i = 0, l = controlToggleAbout.length; i < l; i++) {
@@ -188,7 +190,7 @@ for (let i = 0, l = controlToggleAbout.length; i < l; i++) {
 
 controlAudio.addEventListener(
   'click',
-  (ev) => {
+  ev => {
     if (ev.currentTarget.getAttribute('data-playing') === 'true') {
       ev.currentTarget.setAttribute('data-playing', 'false');
       audioPause();
