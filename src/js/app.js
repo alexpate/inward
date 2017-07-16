@@ -12,7 +12,7 @@ let source;
 let audioGain;
 let bufferLength;
 let dataArray;
-const frequencyLimit = 128.5;
+const frequencyLimit = 128.6;
 const gifContainer = document.getElementsByClassName('floor')[0];
 const canvas = document.getElementById('about-waveform');
 const gifsLength = ALL_GIFS.length;
@@ -133,11 +133,9 @@ const ConfigAudio = () => {
   ctx = new (window.AudioContext || window.webkitAudioContext)();
   analyser = ctx.createAnalyser();
   source = ctx.createMediaElementSource(audio);
-  audioGain = ctx.createGain();
   analyser.smoothingTimeConstant = 0.6;
   source.connect(ctx.destination);
   source.connect(analyser);
-  source.connect(audioGain);
   analyser.fftSize = 2048;
   bufferLength = analyser.frequencyBinCount;
   dataArray = new Uint8Array(analyser.frequencyBinCount);
@@ -150,6 +148,7 @@ const ConfigAudio = () => {
 //
 const StartVisuals = () => {
   let totalFrequency = 0;
+  // console.log(dataArray)
   analyser.getByteTimeDomainData(dataArray);
   requestAnimationFrame(StartVisuals);
 
