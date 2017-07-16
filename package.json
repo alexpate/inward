@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/webpack --config webpack.prod.config.js",
+    "build": "./node_modules/.bin/webpack -p --config webpack.prod.config.js",
     "deploy": "rm -rf dist && npm run build && ./node_modules/.bin/s3-website deploy"
   },
   "author": "Alex Pate",
