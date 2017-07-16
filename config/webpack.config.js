@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: ['babel-polyfill', '../src/js/app'],
@@ -22,7 +23,14 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader',
+          use: [{
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [autoprefixer]
+              }
+            }
+          }]
         }),
       },
       {
