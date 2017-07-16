@@ -19,7 +19,7 @@ We can then wrap this `Audio` object, in an `AudioContext` object, which will al
 
 Now that we have exposed this data, we can start to create visualisations with it. The main flashing gif effect is relatively simple. We first create a new `Uint8Array`, passing in the number of value places that we will require later. We can then fill this array, by using `getByteTimeDomainData`, which returns the current time domain information of the stream at that moment in time. This is then iterated over, and added to a running total, which we can then find an average from.
 
-We then end up with a figure (for example `127.4`). Based on some trail and error, the time domain average of a techno mix comes out at around 128. It's then a case of flicking between different images if this value goes over a predefined max (in this case, `128.6`).
+We then end up with a figure (for example `127.4`). Based on some trial and error, the time domain average of a techno mix comes out at around 128. It's then a case of flicking between different images if this value goes over a predefined max (in this case, `128.6`).
 
 *Note: This was my first time using the Web Audio API. If any of the above is incorrect, please feel free to create an issue, or even better a PR!*
 
