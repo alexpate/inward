@@ -75,7 +75,6 @@ const GenerateImageCSS = gifs => {
     css += generateCss(gifs[i]);
   }
 
-  console.log(css);
 
   if (style.styleSheet) {
     style.styleSheet.cssText = css;
@@ -94,6 +93,11 @@ const RemoveLoadingState = () => {
   const loadingButton = document.getElementsByClassName('control-loading')[0];
   loadingButton.innerHTML = 'Enter';
   loadingButton.classList.remove('control-loading');
+
+  loadingButton.addEventListener('click', () => {
+    audio.play();
+    ctx.resume();
+  });
 };
 
 //
@@ -128,9 +132,10 @@ const ConfigAudio = () => {
   audio.controls = false;
   audio.autoplay = true;
   audio.crossOrigin = 'anonymous';
+  audio.play();
   document.body.appendChild(audio);
-
-  ctx = new (window.AudioContext || window.webkitAudioContext)();
+  
+  ctx = new AudioContext()
   analyser = ctx.createAnalyser();
   source = ctx.createMediaElementSource(audio);
   analyser.smoothingTimeConstant = 0.6;
@@ -140,6 +145,8 @@ const ConfigAudio = () => {
   bufferLength = analyser.frequencyBinCount;
   dataArray = new Uint8Array(analyser.frequencyBinCount);
   analyser.getByteFrequencyData(dataArray);
+
+  ctx.resume()
 };
 
 //
