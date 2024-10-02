@@ -124,9 +124,7 @@ const CheckIfMobile = () => {
 //
 const ConfigAudio = () => {
   audio = new Audio();
-  // audio.src = `https://api.soundcloud.com/tracks/${TRACK}/stream?client_id=${CLIENT_ID}`;
-  audio.src = "http://play.fnoobtechno.com:2199/;";
-  // audio.src = "https://streaming.radio.co/s258f7b690/listen";
+  audio.src = "https://traxx020.ice.infomaniak.ch/traxx020-low.mp3";
   audio.controls = false;
   audio.autoplay = true;
   audio.crossOrigin = 'anonymous';

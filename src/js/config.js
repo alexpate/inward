@@ -1,13 +1,5 @@
 // A quick switch to turn on console logging and other debugging
 export const DEBUG = false;
-// SoundCloud Track ID
-// Only supports SoundCloud at the moment, due to streaming issues.
-// We need to be able to get an audio stream that we can perform
-// analysis on.
-// export const TRACK = '223078149';
-// export const TRACK = '121497631';
-// export const TRACK = '98380289';
-export const TRACK = '132296685';
 
 // SoundCloud client id
 export const CLIENT_ID = '';
